@@ -28,6 +28,7 @@ Zero third-party dependencies (NFR-2). URLSession and Foundation only. If you th
 ## Workflow
 
 - Work happens in the open: every change traces to a GitHub issue; one issue = one PR = one self-contained change
+- **All changes go through PRs — docs included.** `main` is protected by ruleset (PR required, no force push); direct pushes are rejected
 - PRs target 200–400 changed lines; split before exceeding
 - No feature PR bundles refactors, cleanups, or drive-by fixes
 - Issue #1 (Cohere official-package check) gates feature commits; spikes on throwaway branches are exempt
