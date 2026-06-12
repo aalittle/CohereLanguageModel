@@ -104,23 +104,24 @@ public struct CohereLanguageModelExecutor: LanguageModelExecutor {
         model: Model,
         streamingInto channel: LanguageModelExecutorGenerationChannel
     ) async throws {
-        let messages: [ChatMessage]
         do {
-            messages = try TranscriptMapper.messages(from: request.transcript)
-        } catch is TranscriptMappingError {
-            throw LanguageModelError.unsupportedTranscriptContent(.init(
-                unsupportedContent: [],
-                debugDescription:
-                    "Transcript contains segments with no Chat V2 representation"
-            ))
+            try await stream(request, into: channel)
+        } catch {
+            throw ErrorMapper.mapped(error)
         }
+    }
 
-        // GenerationOptions passthrough arrives with #11; tools with #16.
-        let chatRequest = ChatRequest(
+    private func stream(
+        _ request: LanguageModelExecutorGenerationRequest,
+        into channel: LanguageModelExecutorGenerationChannel
+    ) async throws {
+        // Tools pass through with #16.
+        var chatRequest = ChatRequest(
             model: configuration.modelID,
-            messages: messages,
+            messages: try TranscriptMapper.messages(from: request.transcript),
             stream: true
         )
+        try OptionsMapper.apply(request.generationOptions, to: &chatRequest)
 
         var parser = ChatStreamParser()
         var translator = StreamTranslator()

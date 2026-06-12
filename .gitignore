@@ -6,3 +6,6 @@
 .swiftpm/
 *.xcodeproj
 DerivedData/
+
+# iCloud sync-conflict duplicates — never commit (they still break builds; see CLAUDE.md)
+* [0-9].swift
