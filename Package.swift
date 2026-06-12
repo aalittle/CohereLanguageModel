@@ -35,5 +35,12 @@ let package = Package(
             dependencies: ["CohereAPI"],
             resources: [.copy("Fixtures")]
         ),
+
+        // Compiles to nothing on toolchains older than the Xcode 27 beta
+        // (Swift <6.4), same as the module it tests.
+        .testTarget(
+            name: "CohereLanguageModelTests",
+            dependencies: ["CohereLanguageModel"]
+        ),
     ]
 )
