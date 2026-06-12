@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  core:
+    name: Build & test CohereAPI (stock toolchain)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain info
+        run: swift --version && xcodebuild -version
+      # The whole package (including the adapter target) builds on stock
+      # toolchains until #8 adds the FoundationModels import. When that
+      # lands, scope this to the CohereAPI target and add a beta-SDK job
+      # once runners carry Xcode 27.
+      - name: Build
+        run: swift build
+      - name: Test
+        run: swift test
