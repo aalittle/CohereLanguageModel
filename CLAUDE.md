@@ -10,11 +10,12 @@ Swift package conforming Cohere's Chat V2 API to Apple's Foundation Models `Lang
 All builds require the **Xcode 27 beta**. The system-selected Xcode (26.1.1) does NOT have the `LanguageModel` / `LanguageModelExecutor` protocols and will fail to compile the adapter target.
 
 ```sh
-DEVELOPER_DIR=/Applications/Xcode-beta.app swift build
-DEVELOPER_DIR=/Applications/Xcode-beta.app swift test
+DEVELOPER_DIR=/Applications/Xcode-beta.app swift test --scratch-path "$HOME/.cache/swiftpm-scratch/CohereLanguageModel"
 ```
 
 Never run `xcode-select -s` globally; always use `DEVELOPER_DIR` per-invocation.
+
+**The `--scratch-path` is mandatory with the beta toolchain.** This repo lives in `~/Documents`, which iCloud syncs; the File Provider tags build products with extended attributes and codesigning then fails with "resource fork, Finder information, or similar detritus not allowed". Building into a scratch path outside the synced tree avoids it. (The stock toolchain doesn't codesign test bundles, so plain `swift test` works there — that's what CI runs.)
 
 ## Architecture
 
