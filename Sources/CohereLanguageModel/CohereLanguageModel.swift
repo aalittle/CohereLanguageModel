@@ -67,22 +67,36 @@ public struct CohereLanguageModel: LanguageModel {
     public typealias Executor = CohereLanguageModelExecutor
 }
 
-/// The executor behind ``CohereLanguageModel``. Streaming generation lands
-/// with #10; until then `respond` throws ``NotImplementedYet``.
+/// The executor behind ``CohereLanguageModel``: translates the transcript,
+/// streams Chat V2 SSE, and pushes framework events into the channel.
 @available(iOS 27.0, macOS 27.0, visionOS 27.0, watchOS 27.0, *)
 public struct CohereLanguageModelExecutor: LanguageModelExecutor {
     public typealias Model = CohereLanguageModel
 
     public let configuration: Model.Configuration
+    let transport: any ChatTransport
 
     public init(configuration: Model.Configuration) throws {
+        // Credential wiring (token provider + Keychain) lands with #12;
+        // until then requests fail with TransportError.missingCredentials.
+        self.init(
+            configuration: configuration,
+            transport: URLSessionChatTransport {
+                throw TransportError.missingCredentials
+            }
+        )
+    }
+
+    /// Test seam: inject a fixture-backed transport.
+    init(configuration: Model.Configuration, transport: any ChatTransport) {
         self.configuration = configuration
+        self.transport = transport
     }
 
     public func prewarm(model: Model, transcript: Transcript) {
-        // Connection warmup (TLS handshake via the shared URLSession)
-        // arrives with the transport in #10. prewarm is synchronous and
-        // non-throwing by protocol design, so it must stay fire-and-forget.
+        // Deliberately empty for now. prewarm is synchronous and
+        // non-throwing by protocol design, so anything here must stay
+        // fire-and-forget; TLS pre-connect is a candidate once #12 lands.
     }
 
     public func respond(
@@ -90,11 +104,73 @@ public struct CohereLanguageModelExecutor: LanguageModelExecutor {
         model: Model,
         streamingInto channel: LanguageModelExecutorGenerationChannel
     ) async throws {
-        throw NotImplementedYet()
+        let messages: [ChatMessage]
+        do {
+            messages = try TranscriptMapper.messages(from: request.transcript)
+        } catch is TranscriptMappingError {
+            throw LanguageModelError.unsupportedTranscriptContent(.init(
+                unsupportedContent: [],
+                debugDescription:
+                    "Transcript contains segments with no Chat V2 representation"
+            ))
+        }
+
+        // GenerationOptions passthrough arrives with #11; tools with #16.
+        let chatRequest = ChatRequest(
+            model: configuration.modelID,
+            messages: messages,
+            stream: true
+        )
+
+        var parser = ChatStreamParser()
+        var translator = StreamTranslator()
+
+        for try await chunk in try await transport.stream(
+            chatRequest, baseURL: configuration.baseURL
+        ) {
+            for event in parser.feed(chunk) {
+                for action in translator.translate(event) {
+                    if try await perform(action, on: channel) { return }
+                }
+            }
+        }
+        for event in parser.finish() {
+            for action in translator.translate(event) {
+                if try await perform(action, on: channel) { return }
+            }
+        }
     }
 
-    /// Placeholder until #10. Deliberately not a `LanguageModelError`:
-    /// those describe model/service failures, not missing code.
-    public struct NotImplementedYet: Error {}
+    /// Replays one planned action onto the real channel. Returns `true`
+    /// when the stream is complete.
+    private func perform(
+        _ action: StreamTranslator.Action,
+        on channel: LanguageModelExecutorGenerationChannel
+    ) async throws -> Bool {
+        switch action {
+        case .metadata(let requestID):
+            await channel.send(.response(
+                action: .updateMetadata(["cohere.requestID": requestID])
+            ))
+        case .appendText(let segmentID, let text):
+            // tokenCount 0 by policy: Cohere reports no per-delta counts;
+            // accurate totals arrive in the usage action at message-end.
+            await channel.send(.response(
+                action: .appendText(text, segmentID: segmentID, tokenCount: 0)
+            ))
+        case .appendReasoning(let segmentID, let text):
+            await channel.send(.reasoning(
+                action: .appendText(text, segmentID: segmentID, tokenCount: 0)
+            ))
+        case .usage(let input, let cached, let output, let reasoning):
+            await channel.send(.response(action: .updateUsage(
+                input: .init(totalTokenCount: input, cachedTokenCount: cached),
+                output: .init(totalTokenCount: output, reasoningTokenCount: reasoning)
+            )))
+        case .finished:
+            return true
+        }
+        return false
+    }
 }
 #endif
