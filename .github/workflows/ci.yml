@@ -11,6 +11,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Select newest Xcode on runner
+        run: sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -1)"
       - name: Toolchain info
         run: swift --version && xcodebuild -version
       # The whole package (including the adapter target) builds on stock

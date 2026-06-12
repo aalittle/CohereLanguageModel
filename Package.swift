@@ -1,4 +1,6 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.1
+// Tools version stays at 6.1 (nothing in this manifest needs newer) so CI
+// runners trailing the latest Xcode can still build the core target.
 import PackageDescription
 
 // Platform floor is 26.0 so the CohereAPI core target builds on stock
