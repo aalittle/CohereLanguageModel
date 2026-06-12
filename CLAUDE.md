@@ -35,7 +35,7 @@ Zero third-party dependencies (NFR-2). URLSession and Foundation only. If you th
 
 ## Swift standards
 
-Swift 6.2, API Design Guidelines naming. Specifics this project holds itself to:
+Baseline: [ios-swift-best-practices.md](ios-swift-best-practices.md) — read it before writing code. The rules below are that baseline applied to a server-client library package (the app-specific sections — UI, navigation, accessibility, persistence — mostly don't apply here). Per its own guidance: when we deviate, the reason is written down.
 
 **Concurrency**
 - Strict concurrency `complete`; the package must be warning-free
@@ -73,6 +73,5 @@ Swift 6.2, API Design Guidelines naming. Specifics this project holds itself to:
 
 ## Gotchas
 
-- `swift-best-practices-audit.md` in this folder is an audit of a *different* project (Daily Pulse); it's reference material, untracked — do not commit it
 - Apple's recommended event order is metadata → usage → text deltas; Cohere reports usage only at message-end, so usage is emitted late by design — documented deviation (FR-14)
 - Citations arrive interleaved with text deltas but reference offsets in the complete response; citation timing is a deliberate design decision (issue #17), don't improvise it
