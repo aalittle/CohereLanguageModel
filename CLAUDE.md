@@ -75,5 +75,6 @@ Baseline: [ios-swift-best-practices.md](ios-swift-best-practices.md) — read it
 
 ## Gotchas
 
+- **iCloud creates `Name 2.swift` sync-conflict duplicates** in this repo (it's under `~/Documents`). SPM compiles every `.swift` in a target directory, so they break the build with "ambiguous for type lookup" errors. They're gitignored but must be deleted when they appear: `find Sources Tests -name "* [0-9].swift" -delete`. The durable fix is moving the repo out of iCloud-synced paths.
 - Apple's recommended event order is metadata → usage → text deltas; Cohere reports usage only at message-end, so usage is emitted late by design — documented deviation (FR-14)
 - Citations arrive interleaved with text deltas but reference offsets in the complete response; citation timing is a deliberate design decision (issue #17), don't improvise it
