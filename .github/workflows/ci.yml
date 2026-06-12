@@ -15,10 +15,10 @@ jobs:
         run: sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -1)"
       - name: Toolchain info
         run: swift --version && xcodebuild -version
-      # The whole package (including the adapter target) builds on stock
-      # toolchains until #8 adds the FoundationModels import. When that
-      # lands, scope this to the CohereAPI target and add a beta-SDK job
-      # once runners carry Xcode 27.
+      # The adapter target is gated with `#if compiler(>=6.4)` (Xcode 27
+      # beta), so on stock toolchains it compiles to an empty module and
+      # the whole package builds here. Add a beta-SDK job (and drop the
+      # gate) once runners carry Xcode 27.
       - name: Build
         run: swift build
       - name: Test
