@@ -1,0 +1,18 @@
+HTTP/2 200 
+access-control-expose-headers: X-Debug-Trace-ID
+cache-control: no-cache, no-store, no-transform, must-revalidate, private, max-age=0
+content-type: application/json
+expires: Thu, 01 Jan 1970 00:00:00 GMT
+num_chars: 275
+num_tokens: 38
+pragma: no-cache
+vary: Origin
+x-accel-expires: 0
+x-debug-trace-id: abbddcf586f1525eb8b501310484b374
+date: Fri, 12 Jun 2026 22:22:05 GMT
+content-length: 463
+x-envoy-upstream-service-time: 210
+server: envoy
+via: 1.1 google
+alt-svc: h3=":443"; ma=2592000
+

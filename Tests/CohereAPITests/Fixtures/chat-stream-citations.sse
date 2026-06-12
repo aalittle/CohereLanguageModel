@@ -1,0 +1,821 @@
+event: message-start
+data: {"id":"e61b64db-b26a-4d26-a800-7ab121dd8972","type":"message-start","delta":{"message":{"role":"assistant","content":[],"tool_plan":"","tool_calls":[],"citations":[]}}}
+
+event: content-start
+data: {"type":"content-start","index":0,"delta":{"message":{"content":{"type":"thinking","thinking":""}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"Now"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" I"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" have"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" information"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" from"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" documents"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"."}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Let"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" me"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" extract"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" relevant"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" information"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n\nFrom"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Pump"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" P"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"301"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Service"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Manual"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Bearing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" lubrication"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" frequency"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" every"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" 500"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" operating"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" hours"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Lubric"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"ant"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" specification"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" grade"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" NL"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"GI"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" 2"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" lithium"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" grease"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" only"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Warning"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Over"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"gre"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"asing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" causes"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" seal"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" failure"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n\nFrom"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Safety"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Bulletin"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" 2"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"026"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"04"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Before"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" servicing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" P"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"301"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n  -"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Isolate"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" power"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" at"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" breaker"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" panel"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" B"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n  -"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Apply"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" lockout"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"-tag"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"out"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n  -"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" Verify"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" zero"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" rotation"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" before"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" removing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" coupling"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" guard"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"\n\nI"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" can"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" now"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" provide"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" a"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" comprehensive"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" answer"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" to"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" user's"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" question"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" about"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" both"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" lubrication"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" frequency"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" and"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" pre"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"-serv"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"icing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":" requirements"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":0,"delta":{"message":{"content":{"thinking":"."}}}}
+
+event: content-end
+data: {"type":"content-end","index":0}
+
+event: content-start
+data: {"type":"content-start","index":1,"delta":{"message":{"content":{"type":"text","text":""}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"Based"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" on"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" P"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"ump"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" P"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"301"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" Service"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" Manual"}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":0,"delta":{"message":{"citations":{"start":13,"end":38,"text":"Pump P-301 Service Manual","sources":[{"type":"document","id":"doc-pump-manual","document":{"id":"doc-pump-manual","text":"Pump P-301 requires bearing lubrication every 500 operating hours. Use grade NLGI 2 lithium grease only. Overgreasing causes seal failure.","title":"Pump P-301 Service Manual"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":0}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" and"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" S"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"afety"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" Bulletin"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" 2"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"026"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"04"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":","}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":1,"delta":{"message":{"citations":{"start":43,"end":66,"text":"Safety Bulletin 2026-04","sources":[{"type":"document","id":"doc-safety-bulletin","document":{"id":"doc-safety-bulletin","text":"Before servicing P-301, isolate power at breaker panel B and apply lockout-tagout. Verify zero rotation before removing the coupling guard.","title":"Safety Bulletin 2026-04"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":1}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" here"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" are"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" answers"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" to"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" your"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" questions"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\n\n**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"Bearing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" Lubric"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"ation"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" Frequency"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":":**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\n-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" Pump"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" P"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"301"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" requires"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" bearing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" lubrication"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" **"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"every"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" 500"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" operating"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" hours"}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":2,"delta":{"message":{"citations":{"start":188,"end":213,"text":"every 500 operating hours","sources":[{"type":"document","id":"doc-pump-manual","document":{"id":"doc-pump-manual","text":"Pump P-301 requires bearing lubrication every 500 operating hours. Use grade NLGI 2 lithium grease only. Overgreasing causes seal failure.","title":"Pump P-301 Service Manual"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":2}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\n-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" Use"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" **"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"grade"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" NL"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"GI"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" 2"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" lithium"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" grease"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" only"}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":3,"delta":{"message":{"citations":{"start":224,"end":256,"text":"grade NLGI 2 lithium grease only","sources":[{"type":"document","id":"doc-pump-manual","document":{"id":"doc-pump-manual","text":"Pump P-301 requires bearing lubrication every 500 operating hours. Use grade NLGI 2 lithium grease only. Overgreasing causes seal failure.","title":"Pump P-301 Service Manual"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":3}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\n-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" **"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"Important"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" warning"}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":4,"delta":{"message":{"citations":{"start":263,"end":280,"text":"Important warning","sources":[{"type":"document","id":"doc-pump-manual","document":{"id":"doc-pump-manual","text":"Pump P-301 requires bearing lubrication every 500 operating hours. Use grade NLGI 2 lithium grease only. Overgreasing causes seal failure.","title":"Pump P-301 Service Manual"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":4}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"**:"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" "}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"Over"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"gre"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"asing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" causes"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" seal"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" failure"}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":5,"delta":{"message":{"citations":{"start":284,"end":316,"text":"Overgreasing causes seal failure","sources":[{"type":"document","id":"doc-pump-manual","document":{"id":"doc-pump-manual","text":"Pump P-301 requires bearing lubrication every 500 operating hours. Use grade NLGI 2 lithium grease only. Overgreasing causes seal failure.","title":"Pump P-301 Service Manual"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":5}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" -"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" only"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" apply"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" recommended"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" amount"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\n\n**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"Pre"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"-S"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"erv"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"icing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" Requirements"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":":**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\nBefore"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" servicing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" P"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"-"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"301"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":","}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" you"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" must"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":":"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\n1"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"."}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" **"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"Isolate"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" power"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" at"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" breaker"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" panel"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" B"}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":6,"delta":{"message":{"citations":{"start":425,"end":457,"text":"Isolate power at breaker panel B","sources":[{"type":"document","id":"doc-safety-bulletin","document":{"id":"doc-safety-bulletin","text":"Before servicing P-301, isolate power at breaker panel B and apply lockout-tagout. Verify zero rotation before removing the coupling guard.","title":"Safety Bulletin 2026-04"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":6}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\n2"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"."}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" **"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"Apply"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" lockout"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"-tag"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"out"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" procedures"}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":7,"delta":{"message":{"citations":{"start":465,"end":496,"text":"Apply lockout-tagout procedures","sources":[{"type":"document","id":"doc-safety-bulletin","document":{"id":"doc-safety-bulletin","text":"Before servicing P-301, isolate power at breaker panel B and apply lockout-tagout. Verify zero rotation before removing the coupling guard.","title":"Safety Bulletin 2026-04"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":7}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" \n3"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"."}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" **"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"Verify"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" zero"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" rotation"}}}}
+
+event: citation-start
+data: {"type":"citation-start","index":8,"delta":{"message":{"citations":{"start":505,"end":525,"text":"Verify zero rotation","sources":[{"type":"document","id":"doc-safety-bulletin","document":{"id":"doc-safety-bulletin","text":"Before servicing P-301, isolate power at breaker panel B and apply lockout-tagout. Verify zero rotation before removing the coupling guard.","title":"Safety Bulletin 2026-04"}}],"type":"TEXT_CONTENT","content_index":1}}}}
+
+event: citation-end
+data: {"type":"citation-end","index":8}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"**"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" before"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" removing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" the"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" coupling"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" guard"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"\n\nFollowing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" these"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" safety"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" procedures"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" is"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" critical"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" for"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" preventing"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" accidents"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" during"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" maintenance"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":" work"}}}}
+
+event: content-delta
+data: {"type":"content-delta","index":1,"delta":{"message":{"content":{"text":"."}}}}
+
+event: content-end
+data: {"type":"content-end","index":1}
+
+event: message-end
+data: {"type":"message-end","delta":{"finish_reason":"COMPLETE","usage":{"billed_units":{"input_tokens":99,"output_tokens":264},"tokens":{"input_tokens":548,"output_tokens":366,"reasoning_tokens":125},"cached_tokens":144}}}
+
+data: [DONE]
+
