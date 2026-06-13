@@ -79,6 +79,21 @@ func translateFixture(_ name: String) throws -> [StreamTranslator.Action] {
         #expect(actions.last == .finished)
     }
 
+    @Test func citationAndToolEventsTranslateToNoActions() {
+        // v1 maps citation and tool-call events to zero actions (they land
+        // with #16/#18). Asserted directly, per-event — the fixture-level
+        // test above only proves payloads don't leak, not that the count is 0.
+        var translator = StreamTranslator()
+        let citation = Citation(start: 0, end: 1, text: "x", sources: [], type: nil, contentIndex: 0)
+        let call = ToolCall(id: "c1", function: .init(name: "f", arguments: ""))
+        #expect(translator.translate(.citationStart(index: 0, citation: citation)) == [])
+        #expect(translator.translate(.citationEnd(index: 0)) == [])
+        #expect(translator.translate(.toolCallStart(index: 0, call: call)) == [])
+        #expect(translator.translate(.toolCallDelta(index: 0, argumentsFragment: "{")) == [])
+        #expect(translator.translate(.toolCallEnd(index: 0)) == [])
+        #expect(translator.translate(.contentEnd(index: 0)) == [])
+    }
+
     @Test func toolPlanDeltaRoutesToReasoning() {
         var translator = StreamTranslator()
         let actions = translator.translate(.toolPlanDelta(text: "Check status first."))

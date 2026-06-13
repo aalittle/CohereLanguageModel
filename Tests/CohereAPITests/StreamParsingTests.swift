@@ -120,6 +120,26 @@ func parseAll(_ data: Data, chunkSize: Int? = nil) -> [ChatStreamEvent] {
         #expect(events.isEmpty)
     }
 
+    @Test func toolCallStartWithoutCallIsSkipped() {
+        var parser = ChatStreamParser()
+        let events = parser.feed(Data("data: {\"type\":\"tool-call-start\",\"index\":0}\n\n".utf8))
+        #expect(events.isEmpty)
+    }
+
+    @Test func citationStartWithoutCitationIsSkipped() {
+        var parser = ChatStreamParser()
+        let events = parser.feed(Data("data: {\"type\":\"citation-start\",\"index\":0}\n\n".utf8))
+        #expect(events.isEmpty)
+    }
+
+    @Test func indexedEventMissingIndexIsSkipped() {
+        var parser = ChatStreamParser()
+        // content-end requires an index; without it the decoder throws and
+        // the parser skips it rather than crashing (NFR-5).
+        let events = parser.feed(Data("data: {\"type\":\"content-end\"}\n\n".utf8))
+        #expect(events.isEmpty)
+    }
+
     @Test func toolPlanDeltaDecodes() throws {
         // Synthetic: not emitted by Command A+ (which uses thinking blocks)
         // but part of the documented vocabulary.
