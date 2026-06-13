@@ -39,8 +39,8 @@ public struct CohereLanguageModel: LanguageModel {
     /// > distinct `baseURL` (or otherwise distinct configuration) so they
     /// > do not collapse to one cache entry.
     public struct Configuration: Hashable, Sendable {
-        /// Cohere model ID. Configuration, never hardcoded downstream —
-        /// survives model deprecations (PRD dependency 4).
+        /// Cohere model ID. Configuration, never hardcoded downstream, so
+        /// the package survives model deprecations.
         public var modelID: String
 
         /// Chat V2 endpoint. Point at a VPC or on-prem Cohere deployment
@@ -96,7 +96,7 @@ public struct CohereLanguageModel: LanguageModel {
     }
 
     /// Command A+ capabilities. `vision` is deliberately absent (image
-    /// input is out of scope, PRD §8). Note: citation support has no
+    /// input is out of scope). Note: citation support has no
     /// capability flag in the framework's fixed vocabulary — citations
     /// surface through response metadata instead.
     public var capabilities: LanguageModelCapabilities {

@@ -43,7 +43,7 @@ public struct AssistantMessage: Sendable, Equatable, Codable {
 
 /// One typed block of assistant content. Command models stream reasoning as
 /// `thinking` blocks interleaved with `text` blocks (observed in fixtures;
-/// the PRD's event table only anticipated tool-plan reasoning).
+/// the documented event vocabulary only anticipated tool-plan reasoning).
 ///
 /// Unrecognized block types decode as ``other(type:)`` rather than throwing,
 /// per NFR-5 — new block kinds must not break existing apps.

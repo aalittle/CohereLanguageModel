@@ -2,7 +2,6 @@
 
 Swift package conforming Cohere's Chat V2 API to Apple's Foundation Models `LanguageModel` protocol (iOS 27 / macOS 27), with first-class citation support. Personal open source project under `aalittle`.
 
-- **What & why:** [prd-cohere-language-model-package.md](prd-cohere-language-model-package.md)
 - **How, in what order:** [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md) — issue numbers there match GitHub issue numbers 1:1
 
 ## Toolchain — read this first

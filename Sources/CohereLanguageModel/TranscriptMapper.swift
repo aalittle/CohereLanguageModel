@@ -21,7 +21,7 @@ import CohereAPI
 /// tool-plan text). Verified against the live API in #13.
 ///
 /// Throws ``TranscriptMappingError`` for content Cohere cannot represent
-/// (attachment and custom segments — out of scope per PRD §8). The
+/// (attachment and custom segments — out of scope). The
 /// executor maps that onto `LanguageModelError.unsupportedTranscriptContent`,
 /// which is 27-only and therefore not thrown directly from here.
 @available(iOS 26.0, macOS 26.0, visionOS 26.0, watchOS 27.0, *)
