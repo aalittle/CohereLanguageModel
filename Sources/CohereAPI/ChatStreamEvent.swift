@@ -9,20 +9,32 @@ import Foundation
 /// Unknown event types decode as ``unknown(type:)`` rather than throwing —
 /// new server event kinds must never break existing clients (NFR-5).
 public enum ChatStreamEvent: Sendable, Equatable {
+    /// Stream opened; `id` is the server-assigned request identifier.
     case messageStart(id: String?)
+    /// A new content block (text, thinking, …) begins at `index`.
     case contentStart(index: Int, block: ContentBlock?)
+    /// An incremental fragment for the block at `index`.
     case contentDelta(index: Int, delta: ContentDelta)
+    /// The block at `index` is complete.
     case contentEnd(index: Int)
     /// Reasoning about tool use. Not observed from Command A+ (which emits
     /// `thinking` content blocks instead) but part of the documented
     /// vocabulary for other Command models.
     case toolPlanDelta(text: String)
+    /// A tool invocation begins at `index`.
     case toolCallStart(index: Int, call: ToolCall)
+    /// An incremental arguments fragment for the tool call at `index`.
     case toolCallDelta(index: Int, argumentsFragment: String)
+    /// The tool call at `index` is complete.
     case toolCallEnd(index: Int)
+    /// A citation grounding a response span appears at `index`.
     case citationStart(index: Int, citation: Citation)
+    /// The citation at `index` is complete.
     case citationEnd(index: Int)
+    /// Generation finished; `usage` carries the token totals (FR-14: Cohere
+    /// reports usage only at end, not per delta).
     case messageEnd(finishReason: FinishReason?, usage: Usage?)
+    /// An unrecognized event type — skipped per NFR-5.
     case unknown(type: String)
 
     /// One streamed increment of a content block.

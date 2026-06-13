@@ -9,20 +9,34 @@ public struct ChatRequest: Sendable, Equatable, Codable {
     /// Model ID, e.g. `command-a-plus-05-2026`. Always configuration, never
     /// hardcoded by callers (PRD dependency 4).
     public var model: String
+    /// Conversation history, in order. Include all prior turns and the new
+    /// user prompt; the API is stateless.
     public var messages: [ChatMessage]
     /// When `true`, the response arrives as an SSE event stream.
     public var stream: Bool?
+    /// Tools the model may call (FR-9).
     public var tools: [ToolDefinition]?
     /// Grounding documents; their presence triggers citation events (FR-13 prep).
     public var documents: [Document]?
+    /// Constrain response shape; use ``ResponseFormat/jsonObject`` for
+    /// structured output (FR-11 prep).
     public var responseFormat: ResponseFormat?
+    /// Sampling temperature in [0, 1]. Higher values are more random.
+    /// `nil` uses the server default.
     public var temperature: Double?
+    /// Maximum output tokens. `nil` uses the server default.
+    ///
+    /// > Note: Command A+ emits reasoning (thinking blocks) before answering.
+    /// > Set this generously — a budget consumed entirely by reasoning produces
+    /// > no visible text.
     public var maxTokens: Int?
     /// Nucleus (top-p) sampling.
     public var p: Double?
     /// Top-k sampling.
     public var k: Int?
+    /// Fixed random seed for reproducible outputs.
     public var seed: Int?
+    /// Stop generation when any of these sequences is produced.
     public var stopSequences: [String]?
 
     public init(
@@ -65,8 +79,11 @@ public struct ChatRequest: Sendable, Equatable, Codable {
 
 /// One turn in a Chat V2 conversation, discriminated by `role`.
 public enum ChatMessage: Sendable, Equatable {
+    /// Instructions that shape all subsequent responses (the system prompt).
     case system(String)
+    /// A human turn.
     case user(String)
+    /// A prior model response, replayed for multi-turn context.
     case assistant(AssistantTurn)
     /// A tool result, linked to the originating call via `toolCallID`.
     case tool(toolCallID: String, content: String)
