@@ -130,3 +130,7 @@ See [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md) for the milestone breakdown and t
 ## License
 
 [Apache 2.0](LICENSE)
+
+---
+
+Cohere is a trademark of Cohere Inc. This package is not affiliated with or endorsed by Cohere.
