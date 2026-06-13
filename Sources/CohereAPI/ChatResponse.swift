@@ -16,10 +16,15 @@ public struct ChatResponse: Sendable, Equatable, Codable {
 /// The assistant message in a response: ordered content blocks plus any
 /// tool plan, tool calls, and citations.
 public struct AssistantMessage: Sendable, Equatable, Codable {
+    /// Always `"assistant"` on the wire.
     public var role: String
+    /// Ordered content blocks (text, thinking, …).
     public var content: [ContentBlock]?
+    /// Pre-call reasoning the model produced before selecting tools.
     public var toolPlan: String?
+    /// Tool invocations requested by the model.
     public var toolCalls: [ToolCall]?
+    /// Citations grounding text spans in source documents.
     public var citations: [Citation]?
 
     private enum CodingKeys: String, CodingKey {
@@ -109,12 +114,17 @@ public struct ToolCall: Sendable, Equatable, Codable {
 /// Offsets are character positions into the complete text of the content
 /// block at `contentIndex`.
 public struct Citation: Sendable, Equatable, Codable {
+    /// Start character offset (inclusive) in the content block text.
     public var start: Int
+    /// End character offset (exclusive) in the content block text.
     public var end: Int
     /// The exact response text span being cited.
     public var text: String
+    /// Source documents that back this citation.
     public var sources: [Source]
+    /// Citation type string from the API, e.g. `"document"` or `"tool"`.
     public var type: String?
+    /// Index of the content block whose offsets `start`/`end` address.
     public var contentIndex: Int?
 
     private enum CodingKeys: String, CodingKey {
