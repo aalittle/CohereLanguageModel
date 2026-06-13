@@ -130,7 +130,7 @@ Tokens are stored under `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly` and a
 
 ## Development
 
-See [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md) for the milestone breakdown and the [issues](https://github.com/aalittle/CohereLanguageModel/issues) for current work.
+See [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md) for the milestone breakdown and the [issues](https://github.com/aalittle/CohereLanguageModel/issues) for current work. Contributions are welcome — read [CONTRIBUTING.md](CONTRIBUTING.md) first. To report a security issue, see [SECURITY.md](SECURITY.md). Release history is in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
