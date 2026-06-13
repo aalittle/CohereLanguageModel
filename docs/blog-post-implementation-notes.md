@@ -1,10 +1,20 @@
 # What I learned building a third-party LanguageModel for Apple's Foundation Models framework
 
-Apple announced Foundation Models at WWDC 2025, and with WWDC 2026 they opened the `LanguageModel` protocol so third-party models can plug into the same `LanguageModelSession` that runs Apple's on-device model. I spent a few weeks building `CohereLanguageModel`, a package that makes Cohere's Command A+ a drop-in replacement for `SystemLanguageModel`, and I want to share what I found along the way.
+Apple announced Foundation Models at WWDC 2025, and with WWDC 2026 they opened the `LanguageModel` protocol so third-party models can plug into the same `LanguageModelSession` that runs Apple's on-device model. I spent a few days with Claude and Cohere North Mini Code building `CohereLanguageModel`, a package that makes Cohere's Command A+ a drop-in replacement for Apple's Foundation Models (`SystemLanguageModel`), and I want to share what I found along the way.
 
-## Why Cohere
+## Why Cohere, and why now
 
-Cohere does something that most providers don't: when you ground a response with source documents, the model streams back citations with character offsets into the response text. You get the exact span that was grounded and which document backed it. That's the kind of structured output that makes a real difference in production apps, and I wanted to see if Apple's framework could carry it.
+I have become a big fan of Cohere's approach to enterprise AI. They do something that most providers don't: when you ground a response with source documents, the model streams back citations with character offsets into the response text. You get the exact span that was grounded and which document backed it. That's the kind of structured output that makes a real difference in production apps, and I wanted to see if Apple's framework could carry it.
+
+But there's a bigger reason Cohere is interesting right now, and it has nothing to do with citations.
+
+Yesterday the US government issued a directive requiring Anthropic to suspend access to Fable 5 and Mythos 5 for all foreign nationals, effective immediately. Anthropic complied within hours. If you were building on those models outside the US, your application stopped working overnight, with no warning and no workaround.
+
+Cohere's entire thesis is that this shouldn't be possible. Command A+ is open-weight under Apache 2.0, and Cohere's deployment model is built around the idea that enterprises and governments should be able to run these models in their own VPCs, on-premises, or fully air-gapped. They call it sovereign AI, and the argument is that you should own your AI infrastructure the same way you own your database. No dependency on a provider's API staying available, no exposure to another country's export controls.
+
+When I built this package, I added a `baseURL` configuration parameter almost as an afterthought, thinking of it as a convenience for VPC customers. After yesterday, it feels more like the point. If you're running Command A+ on your own infrastructure, the Fable situation simply doesn't apply to you. Your model is yours.
+
+So the package supports both paths. Point it at `api.cohere.com` for the SaaS experience, or point it at your own deployment and nothing leaves your network.
 
 ## The two-target split
 
