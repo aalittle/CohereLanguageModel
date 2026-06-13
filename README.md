@@ -35,6 +35,28 @@ Zero third-party dependencies.
 - Xcode 27 beta (iOS 27 / macOS 27 SDK) for the adapter module
 - A Cohere API key — the documented auth path is a token provider with Keychain persistence; raw key strings are for prototyping only
 
+## Authentication
+
+Per Apple's guidance, the package never takes an API key as a permanent initializer string. The documented path is a `TokenProvider`:
+
+```swift
+// Prototyping — fine for a spike, not for shipping.
+let config = CohereLanguageModel.Configuration(apiKey: "sk-...")
+
+// Production — fetch a short-lived token from your backend and persist it.
+let provider = PersistingTokenProvider(
+    account: "cohere",
+    store: KeychainTokenStore()
+) {
+    try await myBackend.fetchCohereToken()  // gate this with App Attest
+}
+let config = CohereLanguageModel.Configuration(tokenProvider: provider)
+```
+
+Tokens persist in the Keychain only — never in source, logs, URL parameters, or `UserDefaults`. The token is read per request and attached as an `Authorization: Bearer` header.
+
+> **App Attest (production):** mint tokens server-side and require a valid [App Attest](https://developer.apple.com/documentation/devicecheck/establishing-your-app-s-integrity) assertion before issuing one, so tampered builds can't reach your Cohere quota. A full walkthrough lands with the v1 docs (#14).
+
 ## License
 
 [Apache 2.0](LICENSE) — matching Cohere's own Command A+ open-weights release.

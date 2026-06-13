@@ -24,10 +24,20 @@ public struct CohereLanguageModel: LanguageModel {
     ///
     /// The session uses this value as the **executor cache key**: model
     /// instances with equal configurations share one executor (and its
-    /// URLSession). Every stored property therefore participates in
-    /// `Hashable`; adding a property that shouldn't split the cache (e.g.
-    /// a token provider in #12) requires deliberately excluding it from
-    /// equality and documenting why.
+    /// URLSession).
+    ///
+    /// Equality and hashing cover `modelID` and `baseURL` only — the
+    /// `tokenProvider` is deliberately excluded. The cache key identifies
+    /// a logical *endpoint*; the provider is a credential source for that
+    /// endpoint, not part of its identity. Two models pointed at the same
+    /// model + URL therefore share an executor and connection pool
+    /// regardless of how each fetches tokens.
+    ///
+    /// > Important: A consequence is that within one process, the executor
+    /// > captures the provider from whichever equal configuration created
+    /// > it first. For per-user credential isolation, give each tenant a
+    /// > distinct `baseURL` (or otherwise distinct configuration) so they
+    /// > do not collapse to one cache entry.
     public struct Configuration: Hashable, Sendable {
         /// Cohere model ID. Configuration, never hardcoded downstream —
         /// survives model deprecations (PRD dependency 4).
@@ -37,12 +47,45 @@ public struct CohereLanguageModel: LanguageModel {
         /// to use private installations identically to SaaS (FR-8).
         public var baseURL: URL
 
+        /// Supplies the bearer token for each request (FR-7). Defaults to
+        /// ``UnauthenticatedTokenProvider``, so a `Configuration` built
+        /// without credentials constructs fine but fails requests with a
+        /// clear error until a provider is set.
+        public var tokenProvider: any TokenProvider
+
         public init(
             modelID: String = "command-a-plus-05-2026",
-            baseURL: URL = CohereAPI.defaultBaseURL
+            baseURL: URL = CohereAPI.defaultBaseURL,
+            tokenProvider: any TokenProvider = UnauthenticatedTokenProvider()
         ) {
             self.modelID = modelID
             self.baseURL = baseURL
+            self.tokenProvider = tokenProvider
+        }
+
+        /// Convenience for prototyping: configure with a raw API key.
+        /// The documented production path is a `tokenProvider` that fetches
+        /// and persists tokens (see ``TokenProvider``); a key string in
+        /// source is exactly what that path avoids.
+        public init(
+            apiKey: String,
+            modelID: String = "command-a-plus-05-2026",
+            baseURL: URL = CohereAPI.defaultBaseURL
+        ) {
+            self.init(
+                modelID: modelID,
+                baseURL: baseURL,
+                tokenProvider: StaticTokenProvider(apiKey)
+            )
+        }
+
+        public static func == (lhs: Configuration, rhs: Configuration) -> Bool {
+            lhs.modelID == rhs.modelID && lhs.baseURL == rhs.baseURL
+        }
+
+        public func hash(into hasher: inout Hasher) {
+            hasher.combine(modelID)
+            hasher.combine(baseURL)
         }
     }
 
@@ -77,12 +120,13 @@ public struct CohereLanguageModelExecutor: LanguageModelExecutor {
     let transport: any ChatTransport
 
     public init(configuration: Model.Configuration) throws {
-        // Credential wiring (token provider + Keychain) lands with #12;
-        // until then requests fail with TransportError.missingCredentials.
+        // The token provider is fetched per request, never stored here, so
+        // a token never lives longer than one call (NFR-4).
+        let tokenProvider = configuration.tokenProvider
         self.init(
             configuration: configuration,
             transport: URLSessionChatTransport {
-                throw TransportError.missingCredentials
+                try await tokenProvider.token()
             }
         )
     }
