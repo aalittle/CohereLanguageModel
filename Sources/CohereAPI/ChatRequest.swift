@@ -7,7 +7,7 @@ import Foundation
 /// what the developer explicitly set (FR-5).
 public struct ChatRequest: Sendable, Equatable, Codable {
     /// Model ID, e.g. `command-a-plus-05-2026`. Always configuration, never
-    /// hardcoded by callers (PRD dependency 4).
+    /// hardcoded by callers, so the package survives model deprecations.
     public var model: String
     /// Conversation history, in order. Include all prior turns and the new
     /// user prompt; the API is stateless.

@@ -1,6 +1,6 @@
 # Development Plan: CohereLanguageModel
 
-Companion to [prd-cohere-language-model-package.md](prd-cohere-language-model-package.md). Breaks the PRD into GitHub issues, each scoped to one small PR (target 200–400 changed lines).
+Breaks the project into GitHub issues, each scoped to one small PR (target 200–400 changed lines).
 
 ## Working agreements
 
@@ -17,7 +17,7 @@ Split the package into two targets:
 - **`CohereAPI`** — Chat V2 wire types, SSE parser, HTTP client. Pure Foundation, no FoundationModels import. Testable on any toolchain; becomes the Linux-compatible core later (NFR-3).
 - **`CohereLanguageModel`** — the FoundationModels adapter: `LanguageModel` conformance, executor, transcript translation. Requires the iOS 27 / macOS 27 SDK.
 
-This keeps CI green even before GitHub Actions runners carry the Xcode 27 beta, and isolates Apple-protocol churn (PRD risk #2) from the stable Cohere client.
+This keeps CI green even before GitHub Actions runners carry the Xcode 27 beta, and isolates Apple-protocol churn from the stable Cohere client.
 
 ---
 
@@ -25,10 +25,10 @@ This keeps CI green even before GitHub Actions runners carry the Xcode 27 beta, 
 
 | # | Issue | Scope | Exit criteria |
 |---|---|---|---|
-| 1 | Confirm no official Cohere package in flight | `user-action`, **blocking** (PRD Q1) | Cohere contact reply, or 1-week timeout → proceed |
-| 2 | Naming / trademark check | `user-action` (PRD Q4) | Package name decided per Cohere brand guidelines |
+| 1 | Confirm no official Cohere package in flight | `user-action`, **blocking** | Cohere contact reply, or 1-week timeout → proceed |
+| 2 | Naming / trademark check | `user-action` | Package name decided per Cohere brand guidelines |
 | 3 | Protocol spike | Empty `LanguageModel` + `LanguageModelExecutor` conformance compiles against beta SDK; throwaway branch | Compiles; protocol surface notes captured for the blog post |
-| 4 | Trial-tier validation + fixture capture | Live calls: basic chat, streamed chat, document-grounded request with citations. Save raw SSE as test fixtures (PRD Q5) | Fixtures committed; rate-limit reality documented |
+| 4 | Trial-tier validation + fixture capture | Live calls: basic chat, streamed chat, document-grounded request with citations. Save raw SSE as test fixtures | Fixtures committed; rate-limit reality documented |
 
 Issue 4 produces the recorded fixtures every later test depends on — do it early.
 
@@ -60,7 +60,7 @@ Dependencies: 5 → 6 → 7 → 10; 8, 9 independent after 5; 11, 12 after 10; 1
 | # | Issue | Scope | FR |
 |---|---|---|---|
 | 16 | Tool calling | Tool definitions as JSON Schema; tool-plan-delta → reasoning delta; tool-call start/delta/end → toolCallDelta | FR-9 |
-| 17 | Citation timing prototype | Spike both designs — retroactive segment-ID update vs. attach-at-content-end; measure perceived latency; record decision (PRD Q2) | FR-10 (prep) |
+| 17 | Citation timing prototype | Spike both designs — retroactive segment-ID update vs. attach-at-content-end; measure perceived latency; record decision | FR-10 (prep) |
 | 18 | Citation metadata | Winning design from #17: citations as metadata on text segments, typed accessors | FR-10 |
 | 19 | Response schemas | ContextOptions schema → Cohere response_format | FR-11 |
 | 20 | Demo app | Model swap, streamed responses, tappable rendered citations | FR-12 |
@@ -69,17 +69,17 @@ Dependencies: 5 → 6 → 7 → 10; 8, 9 independent after 5; 11, 12 after 10; 1
 
 | # | Issue | Scope |
 |---|---|---|
-| 21 | Share with Cohere | `user-action`: package + honest market assessment (PRD Appendix C) to Cohere contact |
+| 21 | Share with Cohere | `user-action`: package + honest market assessment to Cohere contact |
 
-## Deferred (PRD P2 / open questions)
+## Deferred (P2 / open questions)
 
 - Documents-based RAG via custom segment (FR-13)
 - Usage reporting at stream end (FR-14)
-- Linux conformance — wait for Apple's summer open-source release (PRD Q3); the `CohereAPI` target split keeps the door open
+- Linux conformance — wait for Apple's summer open-source release; the `CohereAPI` target split keeps the door open
 - Server-side tools / connectors (out of scope until v3)
 
 ## Risk checkpoints
 
-- **After issue 3:** if the beta protocol surface differs materially from the PRD's description, revise FR-2/FR-4 before building the executor
+- **After issue 3:** if the beta protocol surface differs materially from the documented expectations, revise FR-2/FR-4 before building the executor
 - **After issue 4:** if trial-tier rate limits can't support a citation demo, raise it in the M4 conversation early
 - **At GM (fall):** one revision pass over the adapter target expected; wire types and parser should be untouched

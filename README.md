@@ -1,5 +1,10 @@
 # CohereLanguageModel
 
+[![CI](https://github.com/aalittle/CohereLanguageModel/actions/workflows/ci.yml/badge.svg)](https://github.com/aalittle/CohereLanguageModel/actions/workflows/ci.yml)
+[![Swift 6.1+](https://img.shields.io/badge/Swift-6.1%2B-orange.svg)](https://swift.org)
+[![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20visionOS%20%7C%20watchOS-lightgrey.svg)](https://github.com/aalittle/CohereLanguageModel)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+
 Cohere's Command models as an Apple Foundation Models `LanguageModel` — a drop-in replacement for `SystemLanguageModel` with first-class citation support.
 
 > **Requires Xcode 27 beta / iOS 27 / macOS 27 SDK.**
@@ -125,12 +130,12 @@ Tokens are stored under `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly` and a
 
 ## Development
 
-See [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md) for the milestone breakdown and the [issues](https://github.com/aalittle/CohereLanguageModel/issues) for current work. The PRD is at [prd-cohere-language-model-package.md](prd-cohere-language-model-package.md).
+See [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md) for the milestone breakdown and the [issues](https://github.com/aalittle/CohereLanguageModel/issues) for current work.
 
 ## License
 
-[Apache 2.0](LICENSE)
+Copyright 2026 Andrew Little. Licensed under the [Apache License 2.0](LICENSE); see [NOTICE](NOTICE).
 
 ---
 
-Cohere is a trademark of Cohere Inc. This package is not affiliated with or endorsed by Cohere.
+Cohere and Command are trademarks of Cohere Inc. This project is an independent, community-built integration and is not affiliated with, endorsed by, or sponsored by Cohere Inc.
