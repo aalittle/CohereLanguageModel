@@ -1,0 +1,9 @@
+# Swift Package Index configuration: https://swiftpackageindex.com/spi-yml
+version: 1
+builder:
+  configs:
+    # Only CohereAPI is built for hosted docs: it compiles on any toolchain.
+    # CohereLanguageModel needs the Xcode 27 SDK (it is gated to an empty
+    # module otherwise), so its DocC catalog is built locally in Xcode until
+    # the index's builders carry that toolchain.
+    - documentation_targets: [CohereAPI]
