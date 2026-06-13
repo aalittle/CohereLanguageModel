@@ -25,9 +25,6 @@ struct StreamTranslator {
         case finished
     }
 
-    /// Indices of content blocks currently streaming as `thinking`.
-    private var thinkingIndices: Set<Int> = []
-
     /// Maps one stream event to zero or more planned actions.
     /// Citation and tool events are intentionally not translated in v1
     /// (they land with #18 and #16); unknown events pass through silently
@@ -36,8 +33,9 @@ struct StreamTranslator {
         switch event {
         case .messageStart(let id):
             return id.map { [.metadata(requestID: $0)] } ?? []
-        case .contentStart(let index, let block):
-            if case .thinking = block { thinkingIndices.insert(index) }
+        case .contentStart:
+            // The content-delta payloads carry their own type (text vs
+            // thinking), so routing needs no per-index state here.
             return []
         case .contentDelta(let index, .text(let text)):
             return [.appendText(segmentID: segmentID(index), text: text)]

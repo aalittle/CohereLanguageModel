@@ -172,7 +172,8 @@ extension ChatMessage: Codable {
 
 /// A tool the model may call, defined by a JSON Schema (FR-9 prep).
 public struct ToolDefinition: Sendable, Equatable, Codable {
-    public var type: String
+    /// Always `"function"` — the only tool type Cohere Chat V2 defines.
+    public let type: String
     public var function: Function
 
     public struct Function: Sendable, Equatable, Codable {

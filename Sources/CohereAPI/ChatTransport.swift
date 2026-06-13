@@ -27,8 +27,8 @@ public enum TransportError: Error {
 /// are fetched per-request and never stored here. #12 layers the public
 /// token-provider API (with Keychain persistence) on top of this hook.
 public struct URLSessionChatTransport: ChatTransport {
-    let session: URLSession
-    let authorization: @Sendable () async throws -> String
+    private let session: URLSession
+    private let authorization: @Sendable () async throws -> String
 
     public init(
         session: URLSession = .shared,
@@ -44,6 +44,7 @@ public struct URLSessionChatTransport: ChatTransport {
         var urlRequest = URLRequest(url: baseURL.appendingPathComponent("v2/chat"))
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("text/event-stream", forHTTPHeaderField: "Accept")
         urlRequest.setValue(
             "Bearer \(try await authorization())", forHTTPHeaderField: "Authorization"
         )
@@ -52,8 +53,13 @@ public struct URLSessionChatTransport: ChatTransport {
         let (bytes, response) = try await session.bytes(for: urlRequest)
 
         if let http = response as? HTTPURLResponse, !(200..<300).contains(http.statusCode) {
+            // Cap the error body: a misbehaving endpoint or proxy could stream
+            // an unbounded response, and we only need the Cohere error JSON.
             var body = Data()
-            for try await byte in bytes { body.append(byte) }
+            for try await byte in bytes {
+                body.append(byte)
+                if body.count >= 16_384 { break }
+            }
             throw TransportError.httpError(
                 statusCode: http.statusCode,
                 body: try? JSONDecoder().decode(APIErrorBody.self, from: body),

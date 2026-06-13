@@ -90,7 +90,8 @@ extension ContentBlock: Codable {
 /// as delivered on the wire (it accumulates incrementally when streaming).
 public struct ToolCall: Sendable, Equatable, Codable {
     public var id: String
-    public var type: String
+    /// Always `"function"` — the only tool type Cohere Chat V2 defines.
+    public let type: String
     public var function: Function
 
     public struct Function: Sendable, Equatable, Codable {
